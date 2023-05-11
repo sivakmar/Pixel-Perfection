@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Images</title>
+    <link rel="stylesheet" href="../static/css/myimages.css">
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a  href="/">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a class="active" href="#">Image AI</a></li>
+          <li><a href="/logout"><button class="button1">Logout</button></a></li>
+        </ul>
+      </nav>
+    <div class="choices">
+    <a href="/beautyimages">Beauty Images</a>
+    <a href="/bgremoveimages">Bg remove Images</a>
+    <a href="/vehiclebgimages">Bg vehicle Images</a>
+    <a href="/cartoonimages">Cartoon Images</a>
+</div>
+<div>
+    {% if rows %}
+  <div style="display:flex;flex-wrap:wrap;">
+    {% for row in rows %}
+      {% if row['CARTOON_IMG'] %}
+        <div style="flex:1 1 5%;padding:5px; margin-left: 30px;">
+          <img src="{{ row['CARTOON_IMG'] }}" alt="{{ row['CARTOON_IMG'] }}" width="200px" height="300px">
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% else %}
+  <p>No images found.</p>
+{% endif %}
+
+</div>
+</body>
+</html>

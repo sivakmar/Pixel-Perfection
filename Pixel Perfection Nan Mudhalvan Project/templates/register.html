@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/register.css">
+    <title>Login</title>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a class="active" href="#">Home</a></li>
+          <li><a href="#">Image AI</a></li>
+          <li><button class="button1">Login</button></li>
+        </ul>
+      </nav>
+      <hr>
+            <div class="parent">
+                <div class="child1">
+                    <img class="i1" src="../static/images/Login Asset.png" alt="computerimage">
+                    <div class="child2">
+                        <form action="{{url_for('register')}}" method="post">
+                            <label>Enter your name<br><br> <input name="myname" placeholder="Your name here"  type="text"/></label><br><br><br>
+                            <label>Enter your email<br><br> <input name="mymail" placeholder="youremail@gmail.com" type="email"/></label><br><br><br>
+                            <label>Enter your password<br><br><input name="mypass" placeholder="abc@xy5$" type="password" /></label><br>
+                            <button class="btn3" type="submit">Submit Now!</button>
+                            <p>{{msg2}}</p>
+                        </form> 
+                        <h6>Already have an account? <a href="/login">Login</a></h6>
+                    </div>
+                </div>
+            </div>
+       
+</body>
+</html>
