@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pixelperfection
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: pixelperfection
+  template:
+    metadata:
+      labels:
+        app: pixelperfection
+    spec:
+      containers:
+      - name: pixelperfection
+        image: us.icr.io/pixel/pixelperfectionapp
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
